@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Primary View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PrimaryViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4PP-Ed-NhB">
+                                <rect key="frame" x="20" y="440" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Cairo"/>
+                                    <segment title="Riyadh"/>
+                                    <segment title="Beirut"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemTealColor"/>
+                                <connections>
+                                    <action selector="citySelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="YB4-TH-ak6"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKa-iA-TVH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="179"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cairo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jip-Q5-9Q6">
+                                        <rect key="frame" x="147.5" y="59.5" width="119" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                        <color key="textColor" systemColor="systemGray6Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstItem="jip-Q5-9Q6" firstAttribute="centerY" secondItem="pKa-iA-TVH" secondAttribute="centerY" id="5pM-02-HXa"/>
+                                    <constraint firstItem="jip-Q5-9Q6" firstAttribute="centerX" secondItem="pKa-iA-TVH" secondAttribute="centerX" id="j0c-Tl-ztf"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HTB-fC-L9r">
+                                <rect key="frame" x="20" y="213.5" width="83" height="83.5"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HTB-fC-L9r" secondAttribute="height" multiplier="1:1" id="vOf-xa-kxe"/>
+                                </constraints>
+                                <imageReference key="image" image="sun.max.fill" catalog="system" renderingMode="original"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                          " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="659-J6-jNR" userLabel="temp">
+                                <rect key="frame" x="138" y="240.5" width="144" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemTealColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fuD-8Q-RUh">
+                                <rect key="frame" x="188.5" y="830" width="37" height="37"/>
+                                <color key="color" systemColor="systemTealColor"/>
+                            </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RlM-BC-gtR">
+                                <rect key="frame" x="20" y="309" width="83" height="80"/>
+                                <color key="tintColor" red="0.0" green="0.59904417583313752" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RlM-BC-gtR" secondAttribute="height" multiplier="1:1" id="Yr5-rG-A2A"/>
+                                </constraints>
+                                <imageReference key="image" image="humidity.fill" catalog="system" renderingMode="template"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="             " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Z0-LT-mEv" userLabel="temp">
+                                <rect key="frame" x="138" y="333.5" width="72" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemTealColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4Z0-LT-mEv" firstAttribute="centerY" secondItem="RlM-BC-gtR" secondAttribute="centerY" id="0h0-J3-1xd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4PP-Ed-NhB" secondAttribute="trailing" constant="20" id="1e4-HH-jZ9"/>
+                            <constraint firstItem="pKa-iA-TVH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2O0-AR-jwr"/>
+                            <constraint firstItem="RlM-BC-gtR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="8FZ-XZ-gfF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="659-J6-jNR" secondAttribute="trailing" symbolic="YES" id="8PF-34-M9i"/>
+                            <constraint firstItem="4PP-Ed-NhB" firstAttribute="top" secondItem="RlM-BC-gtR" secondAttribute="bottom" constant="50" id="Eem-VC-T7d"/>
+                            <constraint firstItem="RlM-BC-gtR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="HeJ-4z-G9Q"/>
+                            <constraint firstItem="659-J6-jNR" firstAttribute="leading" secondItem="HTB-fC-L9r" secondAttribute="trailing" constant="35" id="IjQ-DM-WMz"/>
+                            <constraint firstItem="4Z0-LT-mEv" firstAttribute="leading" secondItem="RlM-BC-gtR" secondAttribute="trailing" constant="35" id="LWy-J3-yIO"/>
+                            <constraint firstItem="659-J6-jNR" firstAttribute="centerY" secondItem="HTB-fC-L9r" secondAttribute="centerY" id="M0k-Uf-HoZ"/>
+                            <constraint firstItem="pKa-iA-TVH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NTY-5T-svl"/>
+                            <constraint firstItem="fuD-8Q-RUh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Vgl-wr-cUT"/>
+                            <constraint firstItem="pKa-iA-TVH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="ZZe-d6-AWA"/>
+                            <constraint firstItem="pKa-iA-TVH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ed5-2R-29L"/>
+                            <constraint firstItem="RlM-BC-gtR" firstAttribute="top" secondItem="HTB-fC-L9r" secondAttribute="bottom" constant="10" id="fLC-yU-jt2"/>
+                            <constraint firstItem="HTB-fC-L9r" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="jIx-Iw-IcU"/>
+                            <constraint firstItem="HTB-fC-L9r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oBg-Jw-CdU"/>
+                            <constraint firstItem="fuD-8Q-RUh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="5" id="rYw-1W-aud"/>
+                            <constraint firstItem="HTB-fC-L9r" firstAttribute="top" secondItem="pKa-iA-TVH" secondAttribute="bottom" constant="35" id="uKb-fy-6Ta"/>
+                            <constraint firstItem="4PP-Ed-NhB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wWk-Oy-UkU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="fuD-8Q-RUh" id="cGJ-zV-JBI"/>
+                        <outlet property="citiesSegmentedControl" destination="4PP-Ed-NhB" id="qps-EE-X4B"/>
+                        <outlet property="cityLabel" destination="jip-Q5-9Q6" id="kim-6o-3QK"/>
+                        <outlet property="humidityLabel" destination="4Z0-LT-mEv" id="8Ty-yv-ZPT"/>
+                        <outlet property="tempLabel" destination="659-J6-jNR" id="BrA-jX-FS6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.98550724637681" y="56.919642857142854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="humidity.fill" catalog="system" width="128" height="98"/>
+        <image name="sun.max.fill" catalog="system" width="128" height="124"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

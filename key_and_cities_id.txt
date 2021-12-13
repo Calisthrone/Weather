@@ -1,0 +1,11 @@
+==========
+
+app key = 748863b6cfaa712bf3280f065cb60a3b
+
+==========
+
+Cities id:
+
+Cairo = 360631
+Riyadh = 108410
+Beirut = 276781
